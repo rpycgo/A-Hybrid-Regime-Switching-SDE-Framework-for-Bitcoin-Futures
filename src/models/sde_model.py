@@ -65,6 +65,13 @@ class SdeModeler:
         global_window = self.data_settings.get("global_window_size", 288)
         time_step = 1.0 / global_window
 
+        # --- FIX: Data Slicing to eliminate Look-ahead Bias ---
+        # We use information at time 't' to predict the outcome at time 't+1'
+        z_values = z_values[:-1]            # Z_t
+        return_lag = returns_scaled[:-1]    # r_t
+        direction_lag = direction[:-1]      # d_t
+        return_target = returns_scaled[1:]  # Target: r_{t+1}
+
         with pm.Model() as hybrid_sde_model:
             # --- 1. Drift Prior Definitions ---
             kappa = pm.HalfNormal("kappa", sigma=self.priors.get("kappa_sigma", 1.0))
@@ -102,7 +109,7 @@ class SdeModeler:
             )
 
             # Combined drift and diffusion
-            mu = (1 - w_t)*(-kappa * returns_scaled) + w_t*(alpha * direction)
+            mu = (1 - w_t)*(-kappa * return_lag) + w_t*(alpha * direction_lag)
             sigma = (1 - w_t)*sigma_0 + w_t*sigma_1
 
             # Likelihood based on Euler-Maruyama discretization
@@ -111,7 +118,7 @@ class SdeModeler:
                 "likelihood",
                 mu=mu * time_step,
                 sigma=(sigma + 1e-6) * np.sqrt(time_step),
-                observed=returns_scaled
+                observed=return_target,
             )
 
             # --- 5. MCMC Sampling Execution ---
