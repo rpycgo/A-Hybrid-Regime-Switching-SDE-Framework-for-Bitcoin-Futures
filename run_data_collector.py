@@ -1,7 +1,7 @@
 import argparse
 
-from src.configuration_loader import ConfigurationLoader
-from src.data_collector import DataCollector
+from src.utils.configuration_loader import ConfigurationLoader
+from src.data.data_collector import DataCollector
 
 
 def run_collection():
@@ -15,28 +15,28 @@ def run_collection():
 
     # 2. Setup Argparse
     parser = argparse.ArgumentParser(description="Binance Futures Data Collection Script")
-    
+
     parser.add_argument(
         "--symbol", 
-        type=str, 
+        type=str,
         default=toml_settings.get("symbol", "BTCUSDT"),
         help="Trading pair symbol (e.g., ETHUSDT)"
     )
     parser.add_argument(
         "--interval", 
-        type=str, 
+        type=str,
         default=toml_settings.get("interval", "5m"),
         help="K-line interval (e.g., 1m, 5m, 1h)"
     )
     parser.add_argument(
         "--start", 
-        type=str, 
+        type=str,
         default=toml_settings.get("start_date", "2024-01-01"),
         help="Start date in YYYY-MM-DD format"
     )
     parser.add_argument(
         "--output", 
-        type=str, 
+        type=str,
         default=toml_settings.get("output_filename", "market_data.csv"),
         help="Output CSV filename"
     )
@@ -45,14 +45,14 @@ def run_collection():
 
     # 3. Execution
     collector = DataCollector(config_loader)
-    
+
     print(f"Starting collection with Symbol: {args.symbol}, Interval: {args.interval}")
-    
+
     market_data = collector.fetch_binance_futures_data(
         symbol=args.symbol,
         interval=args.interval,
-        start_str=args.start,
-        end_str=None
+        start_date=args.start,
+        end_date=None,
     )
 
     collector.save_to_csv(market_data, args.output)
