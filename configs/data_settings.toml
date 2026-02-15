@@ -2,4 +2,33 @@
 symbol = "BTCUSDT"
 interval = "5m"
 start_date = "2024-01-01"
-output_filename = "btcusdt_futures_data.csv"
+output_filename = "btcusdt_future.csv"
+
+[event_detection]
+# --- Analysis Period ---
+analysis_start_date = "2023-10-01"  # Start of detection (allows for warm-up)
+analysis_end_date = "2025-12-31"    # End of detection
+
+# --- Global Indicators Parameters ---
+global_window_size = 288            # window_global: 24h at 5m intervals
+noise_floor = 0.001                 # Minimum threshold for return volatility
+clipping_upper_limit = 6.0          # Upper bound for Z-score outliers
+hybrid_smoothing_window = 3         # Smoothing period for Hybrid Z-score
+minimum_periods_standard = 20       # Minimum data points for rolling calculation
+
+# --- Hybrid Energy & Microstructure Thresholds ---
+hybrid_z_threshold = 2.0            # Hybrid Energy threshold
+energy_rolling_window = 20          # Window for Hybrid Z calculation
+
+# --- Support & Resistance (S/R) Parameters ---
+sr_proximity_threshold = 0.005      # S/R proximity limit (0.5%)
+sr_lookback_window = 288            # Lookback for S/R levels
+quiet_regime_threshold = 1.3        # Quiet regime boundary
+
+# --- Breakout & Persistence Validation ---
+min_window_magnitude = 0.03         # 4h window price move (3%)
+persistence_duration = 6            # Breakout sustain bars
+event_window_half_hours = 2         # Half-width of the event window in hours (Total 4h)
+
+# --- Output Configuration ---
+output_filename = "events.toml"      # Export filename
