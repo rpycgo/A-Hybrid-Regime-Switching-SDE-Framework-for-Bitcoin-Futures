@@ -10,7 +10,8 @@ show_progress_bar = false     # Enable or disable the sampling progress bar
 [initial_values]
 # Starting points for the MCMC chains
 kappa = 1.0
-alpha = 30.0
+alpha_long = 30.0
+alpha_short = 20.0
 gamma = 2.0
 k = 1.0
 sigma_0 = 1.0

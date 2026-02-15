@@ -72,11 +72,21 @@ class SdeModeler:
         direction_lag = direction[:-1]      # d_t
         return_target = returns_scaled[1:]  # Target: r_{t+1}
 
+        # --- UPDATE: Directional Components for Asymmetric Drift ---
+        # Splitting trend direction to allow independent learning of long and short dynamics
+        d_long = np.where(direction_lag > 0, 1.0, 0.0)
+        d_short = np.where(direction_lag < 0, -1.0, 0.0)
+
         with pm.Model() as hybrid_sde_model:
             # --- 1. Drift Prior Definitions ---
             kappa = pm.HalfNormal("kappa", sigma=self.priors.get("kappa_sigma", 1.0))
-            alpha = pm.Normal(
-                "alpha", 
+            alpha_long = pm.Normal(
+                "alpha_long", 
+                mu=self.priors.get("alpha_mu", 50.0), 
+                sigma=self.priors.get("alpha_sigma", 10.0)
+            )
+            alpha_short = pm.Normal(
+                "alpha_short", 
                 mu=self.priors.get("alpha_mu", 50.0), 
                 sigma=self.priors.get("alpha_sigma", 10.0)
             )
@@ -109,7 +119,8 @@ class SdeModeler:
             )
 
             # Combined drift and diffusion
-            mu = (1 - w_t)*(-kappa * return_lag) + w_t*(alpha * direction_lag)
+            drift_breakout = alpha_long*d_long + alpha_short*d_short
+            mu = (1 - w_t)*(-kappa * return_lag) + w_t*drift_breakout
             sigma = (1 - w_t)*sigma_0 + w_t*sigma_1
 
             # Likelihood based on Euler-Maruyama discretization
@@ -134,7 +145,10 @@ class SdeModeler:
                     progressbar=show_progress
                 )
 
-                param_names = ["alpha", "kappa", "gamma", "k", "sigma_0", "sigma_1"]
+                param_names = [
+                    "alpha_long", "alpha_short", "kappa",
+                    "gamma", "k", "sigma_0", "sigma_1",
+                ]
                 summary_df = az.summary(trace, var_names=param_names)
 
                 return trace, summary_df, summary_df["mean"].to_dict()
