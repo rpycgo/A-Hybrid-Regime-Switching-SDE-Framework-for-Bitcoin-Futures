@@ -20,6 +20,12 @@ class BacktestEngine:
         self.scaling_parameters = self.configuration['parameter_scaling']
         self.execution_costs = self.configuration['execution_costs']
 
+        self.filter_settings = self.configuration.get('filters', {
+            'use_sticky': True,
+            'use_adx': True,
+            'only_selected_zone': False
+        })
+
     def generate_regime_signals(
         self,
         price_data: pd.DataFrame,
@@ -68,12 +74,28 @@ class BacktestEngine:
 
     def run_backtest_simulation(self, price_data: pd.DataFrame,
                                 dynamic_params: dict,
-                                use_sticky: bool = True,
-                                use_adx: bool = True,
-                                only_selected_zone: bool = False):
+                                use_sticky: bool = None,
+                                use_adx: bool = None,
+                                only_selected_zone: bool = None):
         """
         Runs the trade execution loop with optional ADX and Sticky filters.
         """
+        use_sticky = (
+            use_sticky
+            if use_sticky is not None
+            else self.filter_settings['use_sticky']
+        )
+        use_adx = (
+            use_adx
+            if use_adx is not None
+            else self.filter_settings['use_adx']
+        )
+        only_selected_zone = (
+            only_selected_zone
+            if only_selected_zone is not None
+            else self.filter_settings['only_selected_zone']
+        )
+
         trades_list = []
         is_in_position = False
         active_position = {}
