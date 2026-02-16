@@ -59,13 +59,10 @@ class DatasetBuilder:
         df["manual_resistance"] = np.nan
         df["manual_support"] = np.nan
 
-        if not pd.api.types.is_datetime64_any_dtype(df["Datetime"]):
-            df["Datetime"] = pd.to_datetime(df["Datetime"])
-
         # Map each event zone onto the primary timeline
         for zone in zones:
-            mask = (df["Datetime"] >= zone["start_time"]) & (
-                df["Datetime"] <= zone["end_time"]
+            mask = (df.index >= zone["start_time"]) & (
+                df.index <= zone["end_time"]
             )
             df.loc[mask, "is_in_zone"] = True
             df.loc[mask, "zone_id"] = zone["id"]
@@ -85,7 +82,7 @@ class DatasetBuilder:
         model_data = df[df["is_in_zone"] == True].copy()
 
         # Final check: Remove rows with essential missing values
-        essential_cols = ["log_return", "hybrid_z_score", "manual_resistance"]
+        essential_cols = ["log_return", "hybrid_z_score", "volume_z_score"]
         model_data = model_data.dropna(subset=essential_cols)
 
         print(f"📊 Dataset ready: {len(model_data)} rows prepared for MCMC training.")
