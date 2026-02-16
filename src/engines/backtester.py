@@ -178,13 +178,13 @@ class BacktestEngine:
             if pos['hwm'] >= entry_price * (1 + pos['trail_start']):
                 pos['sl_price'] = max(pos['sl_price'], pos['hwm'] * (1 - pos['sl_target']))
 
-            if next_row['High'] >= pos['tp_price']:
-                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
-                        'exit_time': next_time, 'type': 'Long', 'result': 'Win'}
-            elif next_row['Low'] <= pos['sl_price']:
+            if next_row['Low'] <= pos['sl_price']:
                 return {'PnL': (pos['sl_price'] - entry_price) / entry_price - cost,
                         'entry_time': entry_time, 'exit_time': next_time, 'type': 'Long',
                         'result': 'StopLoss'}
+            elif next_row['High'] >= pos['tp_price']:
+                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
+                        'exit_time': next_time, 'type': 'Long', 'result': 'Win'}
 
         elif position_type == 'Short':
             pos['lwm'] = min(pos['lwm'], next_row['Low'])
@@ -196,13 +196,13 @@ class BacktestEngine:
             if pos['lwm'] <= entry_price * (1 - pos['trail_start']):
                 pos['sl_price'] = min(pos['sl_price'], pos['lwm'] * (1 + pos['sl_target']))
 
-            if next_row['Low'] <= pos['tp_price']:
-                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
-                        'exit_time': next_time, 'type': 'Short', 'result': 'Win'}
-            elif next_row['High'] >= pos['sl_price']:
+            if next_row['High'] >= pos['sl_price']:
                 return {'PnL': (entry_price - pos['sl_price']) / entry_price - cost,
                         'entry_time': entry_time, 'exit_time': next_time, 'type': 'Short',
                         'result': 'StopLoss'}
+            elif next_row['Low'] <= pos['tp_price']:
+                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
+                        'exit_time': next_time, 'type': 'Short', 'result': 'Win'}
 
         if (next_time - entry_time).total_seconds() / 3600 > pos['max_hold']:
             pnl = (
