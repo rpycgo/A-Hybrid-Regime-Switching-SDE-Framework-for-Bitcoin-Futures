@@ -140,13 +140,15 @@ def run_walk_forward_analysis_pipeline():
     print(f"✅ Walk-Forward Analysis Complete. {len(all_traces)} windows saved in one go.")
 
     # Report
+    # 1. Performance Metrics Report
     metrics, equity_curve, drawdown = PerformanceAnalyzer.calculate_metrics(final_trades)
     PerformanceAnalyzer.print_performance_report(metrics)
-    plotter = StrategyPlotter()
 
     # 2. Predictive Power Report (IC Analysis)
     PerformanceAnalyzer.calculate_predictive_ic(final_signals, 'regime_prob')
 
+    # 3. Visualization
+    plotter = StrategyPlotter()
     plotter.plot_backtest_results(equity_curve, drawdown)
     print(f"📊 Figures and Report generated successfully.")
 
