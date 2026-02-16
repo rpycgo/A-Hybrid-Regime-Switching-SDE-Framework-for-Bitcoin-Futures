@@ -23,7 +23,7 @@ class EventDetector:
     ) -> None:
         """Detects True/False breakouts and filters them by date range."""
         if not pd.api.types.is_datetime64_any_dtype(data_frame["Datetime"]):
-            data_frame["Datetime"] = pd.to_datetime(data_frame["Datetime"])
+            data_frame["Datetime"] = pd.to_datetime(data_frame["Datetime"], utc=True).dt.tz_localize(None)
 
         # Fetch settings with defaults
         hz_threshold = self.settings.get("hybrid_z_threshold", 2.0)
