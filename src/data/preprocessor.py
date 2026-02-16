@@ -140,7 +140,7 @@ class Preprocessor:
         )
 
         # 2. ADX (Average Directional Index)
-        data_frame["adx"] = self._calculate_adx(data_frame)
+        data_frame["ADX"] = self._calculate_adx(data_frame)
 
         return data_frame
 
@@ -162,36 +162,35 @@ class Preprocessor:
         return data_frame
 
     def _calculate_adx(self, data_frame: pd.DataFrame, period: int = 14) -> pd.Series:
-        """Internal helper for ADX calculation using Wilder's Smoothing."""
-        delta_high = data_frame["High"].diff()
-        delta_low = data_frame["Low"].diff()
+        """
+        Calculates ADX using a simplified vectorized approach.
+        This version ensures complete index alignment to prevent NaN issues.
+        """
+        # 1. Directional Movement (DM)
+        # Using clip to isolate positive and negative movements
+        plus_dm = data_frame["High"].diff().clip(lower=0)
+        minus_dm = data_frame["Low"].diff().clip(upper=0).abs()
 
-        plus_directional_movement = np.where(
-            (delta_high > delta_low) & (delta_high > 0), delta_high, 0
-        )
-        minus_directional_movement = np.where(
-            (delta_low > delta_high) & (delta_low > 0), delta_low, 0
-        )
-
+        # 2. True Range (TR)
+        # Using pd.concat to find the max of three price difference scenarios
         true_range = pd.concat([
             data_frame["High"] - data_frame["Low"],
-            np.abs(data_frame["High"] - data_frame["Close"].shift(1)),
-            np.abs(data_frame["Low"] - data_frame["Close"].shift(1))
+            (data_frame["High"] - data_frame["Close"].shift(1)).abs(),
+            (data_frame["Low"] - data_frame["Close"].shift(1)).abs()
         ], axis=1).max(axis=1)
 
-        true_range_sum = true_range.rolling(window=period).sum()
-        plus_directional_indicator = 100 * (
-            pd.Series(plus_directional_movement).rolling(window=period).sum() 
-            / true_range_sum
-        )
-        minus_directional_indicator = 100 * (
-            pd.Series(minus_directional_movement).rolling(window=period).sum() 
-            / true_range_sum
-        )
+        # 3. Average True Range (ATR)
+        atr = true_range.rolling(period).mean()
 
-        directional_index = 100 * (
-            np.abs(plus_directional_indicator - minus_directional_indicator) / 
-            (plus_directional_indicator + minus_directional_indicator)
-        )
+        # 4. Directional Indicators (+DI, -DI)
+        # Applying Wilder's smoothing via ewm (alpha = 1/period)
+        plus_di = 100 * (plus_dm.ewm(alpha=1/period).mean() / atr)
+        minus_di = 100 * abs(minus_dm.ewm(alpha=1/period).mean() / atr)
 
-        return directional_index.rolling(window=period).mean()
+        # 5. Directional Index (DX)
+        # Formula: DX = 100 * |(+DI) - (-DI)| / |(+DI) + (-DI)|
+        dx = (abs(plus_di - minus_di) / abs(plus_di + minus_di)) * 100
+
+        # 6. Average Directional Index (ADX)
+        # Smoothing DX over the specified period
+        return dx.rolling(period).mean()
