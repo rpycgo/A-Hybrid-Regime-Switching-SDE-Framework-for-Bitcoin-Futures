@@ -49,7 +49,7 @@ def main() -> None:
         print(f"❌ Error: The file {input_path} was not found.")
         return
 
-    df = pd.read_csv(input_path, parse_dates=True)
+    df = pd.read_csv(input_path, index_col=0, parse_dates=True)
 
     # 5. Step 1: Feature Engineering
     preprocessor = Preprocessor(config_loader)
