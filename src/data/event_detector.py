@@ -2,14 +2,19 @@ import tomli_w
 import pandas as pd
 import numpy as np
 from datetime import timedelta
-from typing import Optional
-
-from src.utils.configuration_loader import ConfigurationLoader
+from typing import Optional, List, Dict, Any
 
 
 class EventDetector:
     """Extracts breakout events and handles multi-line logic for clarity."""
-    def __init__(self, configuration_loader: ConfigurationLoader):
+
+    def __init__(self, configuration_loader: Any):
+        """
+        Initializes the EventDetector with configuration settings.
+
+        Args:
+            configuration_loader: Loader instance to fetch data settings.
+        """
         self.configuration_loader = configuration_loader
         self.settings = self.configuration_loader.get_data_settings().get(
             "event_detection", {}
@@ -21,23 +26,28 @@ class EventDetector:
         start_date: Optional[str] = None,
         end_date: Optional[str] = None,
     ) -> None:
-        """Detects True/False breakouts and filters them by date range."""
-        if not pd.api.types.is_datetime64_any_dtype(data_frame["Datetime"]):
-            data_frame["Datetime"] = pd.to_datetime(data_frame["Datetime"], utc=True).dt.tz_localize(None)
+        """
+        Detects True/False breakouts and filters them by date range and month boundaries.
+        Validates events based on magnitude and persistence before saving.
 
+        Args:
+            data_frame: Input DataFrame with DatetimeIndex.
+            start_date: Optional start string for analysis.
+            end_date: Optional end string for analysis.
+        """
         # Fetch settings with defaults
         hz_threshold = self.settings.get("hybrid_z_threshold", 2.0)
         prox_threshold = self.settings.get("sr_proximity_threshold", 0.005)
         mag_threshold = self.settings.get("min_window_magnitude", 0.03)
-        p_duration = self.settings.get("persistence_duration", 6)
-        win_half_hours = self.settings.get("event_window_half_hours", 2)
-        output_name = self.settings.get("output_filename", "events.toml")
+        persistence_duration = self.settings.get("persistence_duration", 6)
+        window_half_hours = self.settings.get("event_window_half_hours", 2)
+        output_filename = self.settings.get("output_filename", "events.toml")
 
         # Determine analysis date range
         analysis_start = start_date or self.settings.get("analysis_start_date")
         analysis_end = end_date or self.settings.get("analysis_end_date")
 
-        # 1. Proximity Calculation (Multi-line)
+        # 1. Proximity Calculation
         data_frame["prox_res"] = (
             np.abs(data_frame["Close"] - data_frame["manual_resistance"])
             / data_frame["manual_resistance"]
@@ -54,29 +64,29 @@ class EventDetector:
         )
         triggers = data_frame[condition].copy()
 
-        # Date Filtering
+        # Date Filtering using Index
         if analysis_start:
-            triggers = triggers[triggers["Datetime"] >= pd.to_datetime(analysis_start)]
+            triggers = triggers[triggers.index >= pd.to_datetime(analysis_start)]
         if analysis_end:
-            triggers = triggers[triggers["Datetime"] <= pd.to_datetime(analysis_end)]
+            triggers = triggers[triggers.index <= pd.to_datetime(analysis_end)]
 
-        final_events = []
+        final_events: List[Dict[str, Any]] = []
         last_event_time = None
-        interval_seconds = win_half_hours * 2 * 3600
+        interval_seconds = window_half_hours * 2 * 3600
 
         # 3. Extraction Loop
-        for _, trigger in triggers.iterrows():
-            current_time = trigger["Datetime"]
-
+        for current_time, trigger in triggers.iterrows():
+            # Check for overlapping events
             if last_event_time is None or (
                 (current_time - last_event_time).total_seconds() > interval_seconds
             ):
-                start_window = current_time - timedelta(hours=win_half_hours)
-                end_window = current_time + timedelta(hours=win_half_hours)
+                start_window = current_time - timedelta(hours=window_half_hours)
+                end_window = current_time + timedelta(hours=window_half_hours)
 
+                # Window data slice
                 window_data = data_frame[
-                    (data_frame["Datetime"] >= start_window)
-                    & (data_frame["Datetime"] <= end_window)
+                    (data_frame.index >= start_window)
+                    & (data_frame.index <= end_window)
                 ]
                 if window_data.empty:
                     continue
@@ -91,29 +101,54 @@ class EventDetector:
                 if max_move < mag_threshold:
                     continue
 
-                # Persistence Validation
+                # Persistence Validation (Determine if True/False Breakout)
                 try:
-                    trigger_idx = data_frame.index[
-                        data_frame["Datetime"] == current_time
-                    ].tolist()[0]
+                    trigger_idx = data_frame.index.get_loc(current_time)
                     future_bars = data_frame.iloc[
-                        trigger_idx : trigger_idx + p_duration + 1
+                        trigger_idx : trigger_idx + persistence_duration + 1
                     ]
-                    res, sup = float(trigger["manual_resistance"]), float(
-                        trigger["manual_support"]
-                    )
+                    
+                    resistance = float(trigger["manual_resistance"])
+                    support = float(trigger["manual_support"])
 
                     is_sustained = all(
-                        bar["Close"] > res or bar["Close"] < sup
+                        bar["Close"] > resistance or bar["Close"] < support
                         for _, bar in future_bars.iterrows()
                     )
 
+                    # 4. Final Validation: Month Boundary Check (Moved Here)
+                    final_end_time = end_window
+                    if start_window.month != end_window.month:
+                        # Calculate the last valid point of the current month
+                        last_day_of_month = (start_window + pd.offsets.MonthEnd(0))
+                        adjusted_end = last_day_of_month.replace(
+                            hour=23, minute=55, second=0
+                        )
+                        
+                        # Duration check: If less than 2 hours, discard the event
+                        duration = adjusted_end - start_window
+                        if duration < timedelta(hours=2):
+                            print(
+                                f"⚠️ Discarded: Valid event candidate at {start_window} "
+                                f"crosses month boundary with short duration ({duration})."
+                            )
+                            # Update last_event_time to prevent immediate re-triggering
+                            last_event_time = current_time
+                            continue
+                        else:
+                            print(
+                                f"✂️ Truncated: Valid event at {start_window} "
+                                f"adjusted to {adjusted_end} due to month boundary."
+                            )
+                            final_end_time = adjusted_end
+
+                    # 5. Append Validated Event
                     final_events.append(
                         {
                             "start_time": start_window.strftime("%Y-%m-%d %H:%M:%S"),
-                            "end_time": end_window.strftime("%Y-%m-%d %H:%M:%S"),
-                            "resistance": res,
-                            "support": sup,
+                            "end_time": final_end_time.strftime("%Y-%m-%d %H:%M:%S"),
+                            "resistance": resistance,
+                            "support": support,
                             "event_category": "True Breakout"
                             if is_sustained
                             else "False Breakout",
@@ -121,14 +156,16 @@ class EventDetector:
                         }
                     )
                     last_event_time = current_time
-                except Exception:
+                    
+                except Exception as error:
+                    print(f"❌ Error processing event at {current_time}: {error}")
                     continue
 
-        # 4. Export
+        # 6. Export to TOML
         output_path = (
             self.configuration_loader.configuration_directory.parent
             / "data"
-            / output_name
+            / output_filename
         )
         with open(output_path, "wb") as file:
             tomli_w.dump({"detected_events": final_events}, file)
