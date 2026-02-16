@@ -25,7 +25,7 @@ class SdeModeler:
         self.config_loader = config_loader
 
         # Load priors from model_parameters.toml
-        self.priors = self.config_loader.get_model_settings().get("sde_priors", {})
+        self.priors = self.config_loader.get_model_parameters().get("sde_priors", {})
 
         # Load sampling and initial settings from training_settings.toml
         training_data = self.config_loader.get_training_settings()
