@@ -20,6 +20,12 @@ class BacktestEngine:
         self.scaling_parameters = self.configuration['parameter_scaling']
         self.execution_costs = self.configuration['execution_costs']
 
+        self.filter_settings = self.configuration.get('filters', {
+            'use_sticky': True,
+            'use_adx': True,
+            'only_selected_zone': False
+        })
+
     def generate_regime_signals(
         self,
         price_data: pd.DataFrame,
@@ -68,12 +74,28 @@ class BacktestEngine:
 
     def run_backtest_simulation(self, price_data: pd.DataFrame,
                                 dynamic_params: dict,
-                                use_sticky: bool = True,
-                                use_adx: bool = True,
-                                only_selected_zone: bool = False):
+                                use_sticky: bool = None,
+                                use_adx: bool = None,
+                                only_selected_zone: bool = None):
         """
         Runs the trade execution loop with optional ADX and Sticky filters.
         """
+        use_sticky = (
+            use_sticky
+            if use_sticky is not None
+            else self.filter_settings['use_sticky']
+        )
+        use_adx = (
+            use_adx
+            if use_adx is not None
+            else self.filter_settings['use_adx']
+        )
+        only_selected_zone = (
+            only_selected_zone
+            if only_selected_zone is not None
+            else self.filter_settings['only_selected_zone']
+        )
+
         trades_list = []
         is_in_position = False
         active_position = {}
@@ -178,13 +200,13 @@ class BacktestEngine:
             if pos['hwm'] >= entry_price * (1 + pos['trail_start']):
                 pos['sl_price'] = max(pos['sl_price'], pos['hwm'] * (1 - pos['sl_target']))
 
-            if next_row['High'] >= pos['tp_price']:
-                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
-                        'exit_time': next_time, 'type': 'Long', 'result': 'Win'}
-            elif next_row['Low'] <= pos['sl_price']:
+            if next_row['Low'] <= pos['sl_price']:
                 return {'PnL': (pos['sl_price'] - entry_price) / entry_price - cost,
                         'entry_time': entry_time, 'exit_time': next_time, 'type': 'Long',
                         'result': 'StopLoss'}
+            elif next_row['High'] >= pos['tp_price']:
+                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
+                        'exit_time': next_time, 'type': 'Long', 'result': 'Win'}
 
         elif position_type == 'Short':
             pos['lwm'] = min(pos['lwm'], next_row['Low'])
@@ -196,13 +218,13 @@ class BacktestEngine:
             if pos['lwm'] <= entry_price * (1 - pos['trail_start']):
                 pos['sl_price'] = min(pos['sl_price'], pos['lwm'] * (1 + pos['sl_target']))
 
-            if next_row['Low'] <= pos['tp_price']:
-                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
-                        'exit_time': next_time, 'type': 'Short', 'result': 'Win'}
-            elif next_row['High'] >= pos['sl_price']:
+            if next_row['High'] >= pos['sl_price']:
                 return {'PnL': (entry_price - pos['sl_price']) / entry_price - cost,
                         'entry_time': entry_time, 'exit_time': next_time, 'type': 'Short',
                         'result': 'StopLoss'}
+            elif next_row['Low'] <= pos['tp_price']:
+                return {'PnL': pos['tp_target'] - cost, 'entry_time': entry_time,
+                        'exit_time': next_time, 'type': 'Short', 'result': 'Win'}
 
         if (next_time - entry_time).total_seconds() / 3600 > pos['max_hold']:
             pnl = (
