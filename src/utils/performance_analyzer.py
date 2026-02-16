@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from scipy import stats
+from scipy.stats import spearmanr
 
 
 class PerformanceAnalyzer:
@@ -155,3 +156,30 @@ class PerformanceAnalyzer:
         print("="*80)
         print(f"(* p < 0.05, ** p < 0.01) | SDE Regime Strategy Analysis")
         print("="*80 + "\n")
+
+    @staticmethod
+    def calculate_predictive_ic(signal_df, signal_col, horizons=[1, 5, 10, 20, 50]):
+        """
+        Computes the Rank Information Coefficient (IC) and p-values for a specific signal 
+        across multiple time horizons within a single DataFrame.
+        """
+        print(f"\n[IC Analysis] Signal: {signal_col}")
+        print("-" * 65)
+        print(f"{'Horizon':<12} | {'IC (Rank)':<15} | {'p-value':<12} | {'Significance'}")
+        print("-" * 65)
+
+        for horizon in horizons:
+            # 1. Calculate future volatility (absolute log returns) as the target variable
+            fwd_vol = np.log(signal_df['Close'].shift(-horizon) / signal_df['Close']).abs()
+
+            # 2. Align signal with target and drop missing values (essential for correlation)
+            combined = pd.concat([signal_df[signal_col], fwd_vol], axis=1).dropna()
+
+            # 3. Compute Spearman Rank Correlation and p-value
+            # Returns the correlation coefficient (rho) and the significance level (p-value)
+            ic_val, p_val = spearmanr(combined.iloc[:, 0], combined.iloc[:, 1])
+
+            # Significance marker logic (optional stars can be added here)
+            significance = "Yes" if p_val < 0.05 else "No"
+
+            print(f"{horizon:2d} Ticks{'':<6} | {ic_val:12.4f} | {p_val:12.3f} | {significance}")

@@ -60,6 +60,7 @@ def process_single_window_task(test_start_date, train_data, full_data, modeler, 
         'trades': trades,
         'trace': trace,
         'summary': summary_df,
+        'signal_df': testing_with_signals[['Close', 'regime_prob']],
     }
 
 
@@ -104,6 +105,7 @@ def run_walk_forward_analysis_pipeline():
     all_trades = []
     all_summaries = {}
     all_traces = {}
+    all_signals = []
 
     for result in results:
         if result is None:
@@ -111,6 +113,7 @@ def run_walk_forward_analysis_pipeline():
 
         window = result['window']
         all_trades.append(result['trades'])
+        all_signals.append(result['signal_df'])
 
         summary = result['summary'].copy()
         summary['window'] = window
@@ -126,6 +129,8 @@ def run_walk_forward_analysis_pipeline():
     )
     final_trades.to_csv("results/results.csv")
 
+    final_signals = pd.concat(all_signals).sort_index()
+
     final_summary_df = pd.concat(all_summaries.values())
     final_summary_df.to_csv("results/all_windows_summary.csv")
 
@@ -135,9 +140,15 @@ def run_walk_forward_analysis_pipeline():
     print(f"✅ Walk-Forward Analysis Complete. {len(all_traces)} windows saved in one go.")
 
     # Report
+    # 1. Performance Metrics Report
     metrics, equity_curve, drawdown = PerformanceAnalyzer.calculate_metrics(final_trades)
-    plotter = StrategyPlotter()
     PerformanceAnalyzer.print_performance_report(metrics)
+
+    # 2. Predictive Power Report (IC Analysis)
+    PerformanceAnalyzer.calculate_predictive_ic(final_signals, 'regime_prob')
+
+    # 3. Visualization
+    plotter = StrategyPlotter()
     plotter.plot_backtest_results(equity_curve, drawdown)
     print(f"📊 Figures and Report generated successfully.")
 
