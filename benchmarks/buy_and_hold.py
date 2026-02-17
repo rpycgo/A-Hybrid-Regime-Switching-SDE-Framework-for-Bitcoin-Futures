@@ -71,6 +71,13 @@ def run_buy_and_hold_benchmark():
     # T-statistic: Tests if the mean return is significantly different from zero
     t_stat = daily_returns.mean() / (daily_returns.std() / np.sqrt(len(daily_returns)))
 
+    # Average Recovery Time
+    is_in_drawdown = drawdown < 0
+    drawdown_groups = (is_in_drawdown != is_in_drawdown.shift()).cumsum()
+    recovery_periods = is_in_drawdown.groupby(drawdown_groups).sum()
+    recovery_durations = recovery_periods[recovery_periods > 0]
+    avg_recovery_time = recovery_durations.mean() if not recovery_durations.empty else 0
+
     # 4. Final Performance Report
     print("=" * 60)
     print(f"       🏆 BENCHMARK REPORT: BUY-AND-HOLD")
@@ -84,6 +91,7 @@ def run_buy_and_hold_benchmark():
     print(f"{'Max Drawdown (%)':<30} | {mdd * 100:>12.2f}%")
     print(f"{'Sharpe Ratio':<30} | {sharpe:>13.2f}")
     print(f"{'Sortino Ratio':<30} | {sortino:>13.2f}")
+    print(f"{'Avg. Recovery Time':<30} | {avg_recovery_time:>10.2f} Days")
     print(f"{'T-statistic':<30} | {t_stat:>13.2f}")
     print("=" * 60)
 
