@@ -29,7 +29,7 @@ class BacktestEngine:
     def generate_regime_signals(
         self,
         price_data: pd.DataFrame,
-        kappa_estimated: float,
+        k_estimated: float,
         gamma_estimated: float,
         ):
         """
@@ -39,7 +39,7 @@ class BacktestEngine:
         minimum_duration = self.risk_parameters.get('minimum_signal_duration', 5)
 
         # Calculate Sigmoid-based Regime Probability
-        price_data['regime_prob'] = 1 / (1 + np.exp(-kappa_estimated * (price_data['hybrid_z_score'] - gamma_estimated)))
+        price_data['regime_prob'] = 1 / (1 + np.exp(-k_estimated * (price_data['hybrid_z_score'] - gamma_estimated)))
 
         # Apply Sticky Filter (Persistence check)
         binary_entries = (price_data['regime_prob'] > entry_threshold).astype(int)
