@@ -15,9 +15,9 @@ def main():
     parser = argparse.ArgumentParser(description="Advanced SDE Strategy Results Analyzer")
 
     # Path Configuration
-    parser.add_argument('--summary', type=str, default='results/all_windows_summary.csv', 
+    parser.add_argument('--summary', type=str, default='results/params_summary.csv', 
                         help='Path to the aggregated windows summary CSV')
-    parser.add_argument('--traces', type=str, default='results/all_windows_traces.pkl', 
+    parser.add_argument('--traces', type=str, default='results/traces.pkl', 
                         help='Path to the pickled MCMC traces dictionary')
     parser.add_argument('--out', type=str, default='figures', 
                         help='Directory where generated figures will be stored')
