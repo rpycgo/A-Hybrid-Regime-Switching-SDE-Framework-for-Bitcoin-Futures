@@ -1,0 +1,1511 @@
+[[detected_events]]
+start_time = "2023-10-16 11:45:00"
+end_time = "2023-10-16 15:45:00"
+resistance = 27968.0
+support = 26838.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2023-10-23 18:25:00"
+end_time = "2023-10-23 22:25:00"
+resistance = 31474.3
+support = 29698.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2023-11-01 18:50:00"
+end_time = "2023-11-01 22:50:00"
+resistance = 35030.0
+support = 34200.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2023-11-07 16:50:00"
+end_time = "2023-11-07 20:50:00"
+resistance = 35250.0
+support = 34560.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2023-11-09 11:50:00"
+end_time = "2023-11-09 15:50:00"
+resistance = 37057.5
+support = 35073.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2023-11-14 16:15:00"
+end_time = "2023-11-14 20:15:00"
+resistance = 36910.8
+support = 36030.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2023-11-16 16:25:00"
+end_time = "2023-11-16 20:25:00"
+resistance = 38000.0
+support = 36188.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2023-11-21 21:55:00"
+end_time = "2023-11-22 01:55:00"
+resistance = 37675.0
+support = 35903.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2023-12-02 16:35:00"
+end_time = "2023-12-02 20:35:00"
+resistance = 38888.0
+support = 38612.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2023-12-05 13:35:00"
+end_time = "2023-12-05 17:35:00"
+resistance = 42338.7
+support = 41186.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2023-12-10 23:00:00"
+end_time = "2023-12-11 03:00:00"
+resistance = 44099.2
+support = 43619.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2023-12-11 16:30:00"
+end_time = "2023-12-11 20:30:00"
+resistance = 44099.2
+support = 41050.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2023-12-20 11:10:00"
+end_time = "2023-12-20 15:10:00"
+resistance = 43140.5
+support = 41878.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-01 21:25:00"
+end_time = "2024-01-02 01:25:00"
+resistance = 43900.0
+support = 42180.8
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-03 09:10:00"
+end_time = "2024-01-03 13:10:00"
+resistance = 45850.0
+support = 44598.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-01-08 09:55:00"
+end_time = "2024-01-08 13:55:00"
+resistance = 44460.0
+support = 43211.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-09 19:20:00"
+end_time = "2024-01-09 23:20:00"
+resistance = 47240.3
+support = 46304.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-11 12:35:00"
+end_time = "2024-01-11 16:35:00"
+resistance = 47900.0
+support = 44803.5
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-12 12:35:00"
+end_time = "2024-01-12 16:35:00"
+resistance = 47879.5
+support = 45527.5
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-18 15:25:00"
+end_time = "2024-01-18 19:25:00"
+resistance = 42932.3
+support = 42272.5
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-19 17:00:00"
+end_time = "2024-01-19 21:00:00"
+resistance = 41578.3
+support = 40300.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-01-26 07:45:00"
+end_time = "2024-01-26 11:45:00"
+resistance = 40299.3
+support = 39535.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-01-29 13:50:00"
+end_time = "2024-01-29 17:50:00"
+resistance = 42493.0
+support = 41660.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-02-12 12:40:00"
+end_time = "2024-02-12 16:40:00"
+resistance = 48669.9
+support = 47750.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-02-20 13:35:00"
+end_time = "2024-02-20 17:35:00"
+resistance = 52431.2
+support = 51434.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-02-26 12:45:00"
+end_time = "2024-02-26 16:45:00"
+resistance = 51908.8
+support = 50990.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-02-28 05:35:00"
+end_time = "2024-02-28 09:35:00"
+resistance = 57679.5
+support = 56001.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-02-28 11:10:00"
+end_time = "2024-02-28 15:10:00"
+resistance = 59589.0
+support = 56610.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-02-28 15:25:00"
+end_time = "2024-02-28 19:25:00"
+resistance = 61889.0
+support = 56625.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-05 12:45:00"
+end_time = "2024-03-05 16:45:00"
+resistance = 68824.7
+support = 65880.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-08 13:35:00"
+end_time = "2024-03-08 17:35:00"
+resistance = 68044.0
+support = 66800.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-10 20:50:00"
+end_time = "2024-03-11 00:50:00"
+resistance = 69999.8
+support = 68313.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-11 05:00:00"
+end_time = "2024-03-11 09:00:00"
+resistance = 69999.8
+support = 67633.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-12 13:00:00"
+end_time = "2024-03-12 17:00:00"
+resistance = 72890.0
+support = 71300.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-14 11:35:00"
+end_time = "2024-03-14 15:35:00"
+resistance = 73881.4
+support = 72070.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-14 16:55:00"
+end_time = "2024-03-14 20:55:00"
+resistance = 73881.4
+support = 70201.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-15 00:40:00"
+end_time = "2024-03-15 04:40:00"
+resistance = 73881.4
+support = 69432.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-15 07:15:00"
+end_time = "2024-03-15 11:15:00"
+resistance = 73515.0
+support = 67000.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-16 19:15:00"
+end_time = "2024-03-16 23:15:00"
+resistance = 70097.6
+support = 66701.3
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-03-18 23:20:00"
+end_time = "2024-03-19 03:20:00"
+resistance = 69044.4
+support = 66658.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-19 05:20:00"
+end_time = "2024-03-19 09:20:00"
+resistance = 68685.3
+support = 64640.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-20 16:55:00"
+end_time = "2024-03-20 20:55:00"
+resistance = 65353.8
+support = 60800.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-03-22 08:25:00"
+end_time = "2024-03-22 12:25:00"
+resistance = 67774.3
+support = 65004.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-03-25 11:55:00"
+end_time = "2024-03-25 15:55:00"
+resistance = 67780.0
+support = 64917.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-04-02 00:25:00"
+end_time = "2024-04-02 04:25:00"
+resistance = 70975.0
+support = 68226.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-08 05:30:00"
+end_time = "2024-04-08 09:30:00"
+resistance = 70179.7
+support = 68900.9
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-04-09 11:55:00"
+end_time = "2024-04-09 15:55:00"
+resistance = 72171.6
+support = 70020.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-12 12:35:00"
+end_time = "2024-04-12 16:35:00"
+resistance = 71297.0
+support = 69592.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-13 17:45:00"
+end_time = "2024-04-13 21:45:00"
+resistance = 67975.4
+support = 65754.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-15 17:10:00"
+end_time = "2024-04-15 21:10:00"
+resistance = 66874.9
+support = 63266.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-17 12:15:00"
+end_time = "2024-04-17 16:15:00"
+resistance = 64483.3
+support = 61680.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-18 13:05:00"
+end_time = "2024-04-18 17:05:00"
+resistance = 63950.0
+support = 60067.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-18 23:40:00"
+end_time = "2024-04-19 03:40:00"
+resistance = 63950.0
+support = 60763.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-19 04:45:00"
+end_time = "2024-04-19 08:45:00"
+resistance = 63950.0
+support = 60806.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-04-24 11:40:00"
+end_time = "2024-04-24 15:40:00"
+resistance = 67049.5
+support = 65975.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-04-30 06:30:00"
+end_time = "2024-04-30 10:30:00"
+resistance = 64480.2
+support = 62001.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-05-01 06:15:00"
+end_time = "2024-05-01 10:15:00"
+resistance = 62891.7
+support = 57150.4
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-05-03 10:35:00"
+end_time = "2024-05-03 14:35:00"
+resistance = 59976.9
+support = 58186.7
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-05-10 12:45:00"
+end_time = "2024-05-10 16:45:00"
+resistance = 63446.5
+support = 61348.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-05-13 05:05:00"
+end_time = "2024-05-13 09:05:00"
+resistance = 61787.6
+support = 60650.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-05-20 15:20:00"
+end_time = "2024-05-20 19:20:00"
+resistance = 68302.6
+support = 65958.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-05-20 21:15:00"
+end_time = "2024-05-21 01:15:00"
+resistance = 70100.0
+support = 66010.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-05-23 11:40:00"
+end_time = "2024-05-23 15:40:00"
+resistance = 70597.7
+support = 69066.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-05-27 12:55:00"
+end_time = "2024-05-27 16:55:00"
+resistance = 69313.4
+support = 68268.7
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-05-31 12:35:00"
+end_time = "2024-05-31 16:35:00"
+resistance = 69479.8
+support = 67702.8
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-06-14 13:45:00"
+end_time = "2024-06-14 17:45:00"
+resistance = 67366.5
+support = 66251.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-06-17 16:20:00"
+end_time = "2024-06-17 20:20:00"
+resistance = 66915.4
+support = 65317.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-06-17 22:45:00"
+end_time = "2024-06-18 02:45:00"
+resistance = 67096.0
+support = 65317.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-06-24 17:55:00"
+end_time = "2024-06-24 21:55:00"
+resistance = 64132.7
+support = 59555.9
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-07-03 23:30:00"
+end_time = "2024-07-04 03:30:00"
+resistance = 62101.7
+support = 59555.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-07-08 06:45:00"
+end_time = "2024-07-08 10:45:00"
+resistance = 57899.9
+support = 54755.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-07-10 02:30:00"
+end_time = "2024-07-10 06:30:00"
+resistance = 58870.0
+support = 56922.6
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-07-16 14:10:00"
+end_time = "2024-07-16 18:10:00"
+resistance = 64988.8
+support = 62545.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-07-19 11:45:00"
+end_time = "2024-07-19 15:45:00"
+resistance = 64680.0
+support = 63266.2
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-07-27 18:25:00"
+end_time = "2024-07-27 22:25:00"
+resistance = 69381.7
+support = 67365.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-07-29 13:15:00"
+end_time = "2024-07-29 17:15:00"
+resistance = 69915.0
+support = 67527.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-07-31 17:25:00"
+end_time = "2024-07-31 21:25:00"
+resistance = 66820.0
+support = 65459.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-01 13:00:00"
+end_time = "2024-08-01 17:00:00"
+resistance = 66820.0
+support = 63559.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-01 18:55:00"
+end_time = "2024-08-01 22:55:00"
+resistance = 65029.5
+support = 62272.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-02 18:25:00"
+end_time = "2024-08-02 22:25:00"
+resistance = 65650.0
+support = 62478.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-03 14:35:00"
+end_time = "2024-08-03 18:35:00"
+resistance = 63505.0
+support = 60577.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-04 12:35:00"
+end_time = "2024-08-04 16:35:00"
+resistance = 62145.0
+support = 59888.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-08-04 22:05:00"
+end_time = "2024-08-05 02:05:00"
+resistance = 61089.5
+support = 57719.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-05 03:20:00"
+end_time = "2024-08-05 07:20:00"
+resistance = 61064.6
+support = 53355.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-11 17:25:00"
+end_time = "2024-08-11 21:25:00"
+resistance = 61344.5
+support = 59775.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-12 11:55:00"
+end_time = "2024-08-12 15:55:00"
+resistance = 60736.6
+support = 58000.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-13 14:20:00"
+end_time = "2024-08-13 18:20:00"
+resistance = 59976.2
+support = 58360.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-14 10:30:00"
+end_time = "2024-08-14 14:30:00"
+resistance = 61545.0
+support = 58764.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-15 16:10:00"
+end_time = "2024-08-15 20:10:00"
+resistance = 59820.0
+support = 57679.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-19 23:10:00"
+end_time = "2024-08-20 03:10:00"
+resistance = 60457.9
+support = 57943.5
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-08-21 16:35:00"
+end_time = "2024-08-21 20:35:00"
+resistance = 60318.0
+support = 58728.9
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-08-27 19:15:00"
+end_time = "2024-08-27 23:15:00"
+resistance = 63252.0
+support = 61484.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-28 14:25:00"
+end_time = "2024-08-28 18:25:00"
+resistance = 62165.0
+support = 58466.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-08-30 12:50:00"
+end_time = "2024-08-30 16:50:00"
+resistance = 61144.9
+support = 58650.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-09-03 22:55:00"
+end_time = "2024-09-04 02:55:00"
+resistance = 59656.2
+support = 57320.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-09-06 12:05:00"
+end_time = "2024-09-06 16:05:00"
+resistance = 57159.9
+support = 55607.3
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-09-13 12:05:00"
+end_time = "2024-09-13 16:05:00"
+resistance = 58425.7
+support = 57385.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-09-17 12:10:00"
+end_time = "2024-09-17 16:10:00"
+resistance = 59418.1
+support = 57484.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-10-01 11:30:00"
+end_time = "2024-10-01 15:30:00"
+resistance = 64092.6
+support = 63000.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-10-10 15:15:00"
+end_time = "2024-10-10 19:15:00"
+resistance = 61860.2
+support = 60228.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-10-15 11:40:00"
+end_time = "2024-10-15 15:40:00"
+resistance = 66506.5
+support = 65200.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-10-25 14:05:00"
+end_time = "2024-10-25 18:05:00"
+resistance = 68566.2
+support = 67236.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-11-05 22:30:00"
+end_time = "2024-11-06 02:30:00"
+resistance = 70442.0
+support = 67454.2
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-11-11 12:30:00"
+end_time = "2024-11-11 16:30:00"
+resistance = 82528.0
+support = 78549.2
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-11-11 16:45:00"
+end_time = "2024-11-11 20:45:00"
+resistance = 85267.0
+support = 78549.2
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-11-13 11:45:00"
+end_time = "2024-11-13 15:45:00"
+resistance = 89920.0
+support = 85271.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-11-18 13:40:00"
+end_time = "2024-11-18 17:40:00"
+resistance = 92338.9
+support = 89036.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-11-21 03:00:00"
+end_time = "2024-11-21 07:00:00"
+resistance = 96980.0
+support = 92000.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-11-25 12:45:00"
+end_time = "2024-11-25 16:45:00"
+resistance = 98851.5
+support = 95840.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-04 17:25:00"
+end_time = "2024-12-04 21:25:00"
+resistance = 97041.1
+support = 94809.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-09 18:45:00"
+end_time = "2024-12-09 22:45:00"
+resistance = 100650.0
+support = 96622.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-10 14:00:00"
+end_time = "2024-12-10 18:00:00"
+resistance = 98358.3
+support = 95591.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-15 21:05:00"
+end_time = "2024-12-16 01:05:00"
+resistance = 103499.9
+support = 101125.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-12-16 12:35:00"
+end_time = "2024-12-16 16:35:00"
+resistance = 105644.6
+support = 102556.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-18 17:05:00"
+end_time = "2024-12-18 21:05:00"
+resistance = 106970.0
+support = 103065.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-19 15:55:00"
+end_time = "2024-12-19 19:55:00"
+resistance = 104959.4
+support = 98348.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-20 08:20:00"
+end_time = "2024-12-20 12:20:00"
+resistance = 102756.7
+support = 94000.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-23 12:45:00"
+end_time = "2024-12-23 16:45:00"
+resistance = 96499.0
+support = 93655.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2024-12-24 11:50:00"
+end_time = "2024-12-24 15:50:00"
+resistance = 95580.0
+support = 92464.4
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-12-26 06:00:00"
+end_time = "2024-12-26 10:00:00"
+resistance = 99527.4
+support = 97647.2
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2024-12-30 16:10:00"
+end_time = "2024-12-30 20:10:00"
+resistance = 94249.9
+support = 91510.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-01-07 12:40:00"
+end_time = "2025-01-07 16:40:00"
+resistance = 102762.1
+support = 100250.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-01-08 15:05:00"
+end_time = "2025-01-08 19:05:00"
+resistance = 97559.5
+support = 94200.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-01-13 07:40:00"
+end_time = "2025-01-13 11:40:00"
+resistance = 95278.0
+support = 92720.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-01-19 19:05:00"
+end_time = "2025-01-19 23:05:00"
+resistance = 106450.0
+support = 103833.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-01-20 04:45:00"
+end_time = "2025-01-20 08:45:00"
+resistance = 106450.0
+support = 99600.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-01-23 12:35:00"
+end_time = "2025-01-23 16:35:00"
+resistance = 105136.0
+support = 101211.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-01-26 21:00:00"
+end_time = "2025-01-27 01:00:00"
+resistance = 105236.8
+support = 104239.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-01-27 03:45:00"
+end_time = "2025-01-27 07:45:00"
+resistance = 105236.8
+support = 100024.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-01-31 16:20:00"
+end_time = "2025-01-31 20:20:00"
+resistance = 105767.1
+support = 103880.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-02-02 22:20:00"
+end_time = "2025-02-03 02:20:00"
+resistance = 101426.0
+support = 96506.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-02-04 18:20:00"
+end_time = "2025-02-04 22:20:00"
+resistance = 102456.0
+support = 97792.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-02-21 17:15:00"
+end_time = "2025-02-21 21:15:00"
+resistance = 99431.5
+support = 96296.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-02-24 20:10:00"
+end_time = "2025-02-25 00:10:00"
+resistance = 96470.0
+support = 93571.4
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-02-25 08:05:00"
+end_time = "2025-02-25 12:05:00"
+resistance = 96055.1
+support = 88223.8
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-02-25 12:45:00"
+end_time = "2025-02-25 16:45:00"
+resistance = 95142.0
+support = 87567.7
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-02-26 12:05:00"
+end_time = "2025-02-26 16:05:00"
+resistance = 89442.7
+support = 86125.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-02-26 18:25:00"
+end_time = "2025-02-26 22:25:00"
+resistance = 89442.7
+support = 83700.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-02-27 23:35:00"
+end_time = "2025-02-28 03:35:00"
+resistance = 87066.0
+support = 82667.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-03-02 13:25:00"
+end_time = "2025-03-02 17:25:00"
+resistance = 86515.0
+support = 84505.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-03-03 13:20:00"
+end_time = "2025-03-03 17:20:00"
+resistance = 94800.0
+support = 91100.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-03-06 15:10:00"
+end_time = "2025-03-06 19:10:00"
+resistance = 92780.3
+support = 88830.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-03-06 22:15:00"
+end_time = "2025-03-07 02:15:00"
+resistance = 92780.3
+support = 87790.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-03-07 19:00:00"
+end_time = "2025-03-07 23:00:00"
+resistance = 90754.1
+support = 86530.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-03-09 19:25:00"
+end_time = "2025-03-09 23:25:00"
+resistance = 86470.6
+support = 82192.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-03-10 12:05:00"
+end_time = "2025-03-10 16:05:00"
+resistance = 83730.0
+support = 80280.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-03-12 13:05:00"
+end_time = "2025-03-12 17:05:00"
+resistance = 84175.9
+support = 80600.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-04-02 11:40:00"
+end_time = "2025-04-02 15:40:00"
+resistance = 85595.5
+support = 83485.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-04-02 18:20:00"
+end_time = "2025-04-02 22:20:00"
+resistance = 87255.0
+support = 83846.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-04-06 14:45:00"
+end_time = "2025-04-06 18:45:00"
+resistance = 83790.5
+support = 82220.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-04-06 20:00:00"
+end_time = "2025-04-07 00:00:00"
+resistance = 83790.5
+support = 78676.3
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-04-08 14:35:00"
+end_time = "2025-04-08 18:35:00"
+resistance = 80832.1
+support = 77262.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-04-09 15:15:00"
+end_time = "2025-04-09 19:15:00"
+resistance = 78763.0
+support = 74962.5
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-04-20 22:15:00"
+end_time = "2025-04-21 02:15:00"
+resistance = 85283.6
+support = 83917.3
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-04-22 12:45:00"
+end_time = "2025-04-22 16:45:00"
+resistance = 90433.9
+support = 86579.9
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-05-21 12:45:00"
+end_time = "2025-05-21 16:45:00"
+resistance = 107936.7
+support = 104439.6
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-06-05 16:15:00"
+end_time = "2025-06-05 20:15:00"
+resistance = 105476.7
+support = 103052.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-06-12 23:20:00"
+end_time = "2025-06-13 03:20:00"
+resistance = 108725.3
+support = 103462.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-06-22 11:25:00"
+end_time = "2025-06-22 15:25:00"
+resistance = 103827.6
+support = 100800.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-06-23 16:35:00"
+end_time = "2025-06-23 20:35:00"
+resistance = 103143.8
+support = 98115.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-08-22 10:40:00"
+end_time = "2025-08-22 14:40:00"
+resistance = 113936.0
+support = 111956.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-08-24 15:50:00"
+end_time = "2025-08-24 19:50:00"
+resistance = 115640.0
+support = 114256.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-10-03 12:45:00"
+end_time = "2025-10-03 16:45:00"
+resistance = 120923.9
+support = 118966.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-10-07 13:10:00"
+end_time = "2025-10-07 17:10:00"
+resistance = 125827.0
+support = 122500.1
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-10-09 12:55:00"
+end_time = "2025-10-09 16:55:00"
+resistance = 124170.6
+support = 121081.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-10-10 13:05:00"
+end_time = "2025-10-10 17:05:00"
+resistance = 122497.0
+support = 120071.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-10-10 17:15:00"
+end_time = "2025-10-10 21:15:00"
+resistance = 122497.0
+support = 116888.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-10-16 12:15:00"
+end_time = "2025-10-16 16:15:00"
+resistance = 112069.8
+support = 110096.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-10-17 04:40:00"
+end_time = "2025-10-17 08:40:00"
+resistance = 111960.0
+support = 107350.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-10-21 12:50:00"
+end_time = "2025-10-21 16:50:00"
+resistance = 111649.0
+support = 107418.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-11-04 14:25:00"
+end_time = "2025-11-04 18:25:00"
+resistance = 107634.9
+support = 102738.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-11-12 13:35:00"
+end_time = "2025-11-12 17:35:00"
+resistance = 105297.0
+support = 102400.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-11-13 15:00:00"
+end_time = "2025-11-13 19:00:00"
+resistance = 104024.6
+support = 100711.0
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-11-14 02:30:00"
+end_time = "2025-11-14 06:30:00"
+resistance = 104024.6
+support = 97985.7
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-11-18 01:00:00"
+end_time = "2025-11-18 05:00:00"
+resistance = 95980.1
+support = 90640.7
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-11-19 13:35:00"
+end_time = "2025-11-19 17:35:00"
+resistance = 93799.1
+support = 90303.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-11-20 14:05:00"
+end_time = "2025-11-20 18:05:00"
+resistance = 92980.0
+support = 88564.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-11-21 10:30:00"
+end_time = "2025-11-21 14:30:00"
+resistance = 92118.1
+support = 81601.7
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-11-26 15:25:00"
+end_time = "2025-11-26 19:25:00"
+resistance = 88200.0
+support = 86132.7
+event_category = "True Breakout"
+is_breakout = true
+
+[[detected_events]]
+start_time = "2025-11-30 21:40:00"
+end_time = "2025-12-01 01:40:00"
+resistance = 91818.8
+support = 90550.1
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-02 14:00:00"
+end_time = "2025-12-02 18:00:00"
+resistance = 90765.0
+support = 84011.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-05 12:40:00"
+end_time = "2025-12-05 16:40:00"
+resistance = 93143.4
+support = 90259.6
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-07 15:00:00"
+end_time = "2025-12-07 19:00:00"
+resistance = 89798.0
+support = 88058.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-09 13:25:00"
+end_time = "2025-12-09 17:25:00"
+resistance = 91338.2
+support = 89368.9
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-11 19:10:00"
+end_time = "2025-12-11 23:10:00"
+resistance = 92733.3
+support = 89288.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-12 14:00:00"
+end_time = "2025-12-12 18:00:00"
+resistance = 93169.3
+support = 89288.0
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-15 12:50:00"
+end_time = "2025-12-15 16:50:00"
+resistance = 89940.0
+support = 87871.5
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-17 11:55:00"
+end_time = "2025-12-17 15:55:00"
+resistance = 88012.5
+support = 86158.4
+event_category = "False Breakout"
+is_breakout = false
+
+[[detected_events]]
+start_time = "2025-12-18 13:35:00"
+end_time = "2025-12-18 17:35:00"
+resistance = 89230.0
+support = 85261.3
+event_category = "False Breakout"
+is_breakout = false

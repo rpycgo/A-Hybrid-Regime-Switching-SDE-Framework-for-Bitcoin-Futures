@@ -1,0 +1,23 @@
+[sde_priors]
+# --- Drift Parameters ---
+kappa_sigma = 1.0
+alpha_mu = 50.0
+alpha_sigma = 10.0
+
+# --- Diffusion (Volatility) Parameters ---
+# sigma_0: Volatility for the 'Quiet' regime (Mean Reversion)
+sigma_0_sigma = 0.3
+
+# sigma_1: Volatility for the 'Breakout' regime (Trend Following)
+sigma_1_mu = 10.0
+sigma_1_sigma = 2.0
+sigma_1_lower = 2.0
+
+# --- Regime Switching Parameters ---
+# gamma: Threshold for regime transition
+gamma_mu = 3.0
+gamma_sigma = 0.5
+gamma_lower = 1.5
+
+# k: Speed of transition between regimes
+k_sigma = 2.0
