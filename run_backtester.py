@@ -127,14 +127,14 @@ def run_walk_forward_analysis_pipeline():
         .sort_values(by=['entry_time'])
         .reset_index(drop=True)
     )
-    final_trades.to_csv("results/results.csv")
+    final_trades.to_csv("results/sde_trade_results.csv")
 
     final_signals = pd.concat(all_signals).sort_index()
 
     final_summary_df = pd.concat(all_summaries.values())
-    final_summary_df.to_csv("results/all_windows_summary.csv")
+    final_summary_df.to_csv("results/params_summary.csv")
 
-    with open("results/all_windows_traces.pkl", "wb") as file:
+    with open("results/traces.pkl", "wb") as file:
         pickle.dump(all_traces, file)
 
     print(f"✅ Walk-Forward Analysis Complete. {len(all_traces)} windows saved in one go.")
